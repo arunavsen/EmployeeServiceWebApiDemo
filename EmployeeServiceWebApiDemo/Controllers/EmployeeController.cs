@@ -8,11 +8,11 @@ using EmployeeServiceWebApiDemo.Models;
 
 namespace EmployeeServiceWebApiDemo.Controllers
 {
-    public class EmplyoeeController : ApiController
+    public class EmployeeController : ApiController
     {
         private readonly ApplicationDbContext _db;
 
-        public EmplyoeeController()
+        public EmployeeController()
         {
             ApplicationDbContext db = new ApplicationDbContext();
             _db = db;
