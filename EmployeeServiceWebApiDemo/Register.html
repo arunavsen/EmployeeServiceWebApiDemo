@@ -6,7 +6,7 @@
     <title>Register</title>
 </head>
 <body>
-
+    <!---Register-->
     <div class="container">
         <div class="col-md-6 mt-5">
             <div class="card">
@@ -33,5 +33,34 @@
         </div>
     </div>
 
+    <!--Modal-->
+    <div class="modal fade" tabindex="-1" id="successModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Success</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Registration Successful</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Add bootstrap and Jquery JS file-->
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnRegister').click(function () {
+                $('#successModal').modal('show');
+            });
+        });
+    </script>
 </body>
 </html>
