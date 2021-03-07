@@ -12,9 +12,15 @@ namespace EmployeeServiceWebApiDemo.Controllers
     {
         private readonly ApplicationDbContext _db;
 
-        public EmplyoeeController(ApplicationDbContext db)
+        public EmplyoeeController()
         {
+            ApplicationDbContext db = new ApplicationDbContext();
             _db = db;
+        }
+
+        public IEnumerable<Employees> Get()
+        {
+            return _db.Employeeses.ToList();
         }
 
     }
