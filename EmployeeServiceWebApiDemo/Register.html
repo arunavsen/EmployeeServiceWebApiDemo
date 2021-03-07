@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <!--Modal-->
+    <!----Modal--->
     <div class="modal fade" tabindex="-1" id="successModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -51,12 +51,21 @@
         </div>
     </div>
 
+    <!----Alert--->
+    <div id="divError" class="alert alert-warning collapse">
+        <div id="divErrorText"></div>
+        <button id="linkClose" type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
 
     <!--Add bootstrap and Jquery JS file-->
     <script src="Scripts/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            $('#linkClose').click(function() {
+                $('#divError').hide('fade');
+            });
+
             $('#btnRegister').click(function () {
                 $('#successModal').modal('show');
             });
