@@ -8,6 +8,7 @@ using EmployeeServiceWebApiDemo.Models;
 
 namespace EmployeeServiceWebApiDemo.Controllers
 {
+    [Authorize]
     public class EmployeeController : ApiController
     {
         private readonly ApplicationDbContext _db;
