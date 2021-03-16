@@ -12,7 +12,11 @@
             <div class="card">
                 <div class="card-header">
                     <input type="button" class="btn btn-success" id="btnLoadEmployees" value="Load All Employees" />
-                    <input type="button" class="btn btn-success float-right" id="btnLogOff" value="Logout" />
+                    
+                    <div class="float-right">
+                        <span id="IdentityUserName" class="text-muted"></span>
+                        <input type="button" class="btn btn-success" id="btnLogOff" value="Logout" />
+                    </div>
                 </div>
             </div>
 
@@ -68,6 +72,8 @@
             if (localStorage.getItem('accessToken') == null) {
                 window.location.href = "Login.html";
             }
+
+            $('#IdentityUserName').text('Hello! ' + localStorage.getItem('userName'));
 
             $('#errorModal').on('hidden.bs.modal', function () {
                 window.location.href = "Login.html";
