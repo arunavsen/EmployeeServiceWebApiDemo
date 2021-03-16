@@ -6,7 +6,8 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="container">
+<div class="container">
+    <div class="row">
         <div class="col-md-6">
             <div class="card mt-5">
                 <div class="card-header bg-dark">
@@ -35,17 +36,33 @@
                 <a id="linkClose" class="close" href="#">&times;</a>
             </div>
         </div>
+
+        <div class="col-md-6 mt-5 pl-5">
+            <h3 class="display-4">Social Logins</h3>
+            <hr/>
+            <input type="button" value="Google" class="btn btn-lg btn-outline-info" id="btnGoogle"/>
+        </div>
     </div>
+    
+</div>
 
 
 
 
     <script src="Scripts/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="Scripts/GoogleAuthentication.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+
+            getAccessToken();
+
             $('#linkClose').click(function () {
                 $('#divError').hide('fade');
+            });
+
+            $('#btnGoogle').click(function() {
+                window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=https%3A%2F%2Flocalhost%3A44352%2FLogin.html&state=K4avTc-jiCwfKX1sO_LzqyklPfKDO3UZqCyWX8WHE081";
             });
 
             $('#btnLogin').click(function () {
