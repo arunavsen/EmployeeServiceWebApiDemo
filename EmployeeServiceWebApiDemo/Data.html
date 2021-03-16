@@ -65,7 +65,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            if (sessionStorage.getItem('accessToken') == null) {
+            if (localStorage.getItem('accessToken') == null) {
                 window.location.href = "Login.html";
             }
 
@@ -78,7 +78,7 @@
             });
 
             $('#btnLogOff').click(function() {
-                sessionStorage.removeItem('accessToken');
+                localStorage.removeItem('accessToken');
                 window.location.href = "Login.html";
             });
 
@@ -87,7 +87,7 @@
                     url: '/api/employee',
                     method: 'GET',
                     headers: {
-                        'Authorization': 'Bearer ' + sessionStorage.getItem('accessToken')
+                        'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
                     },
                     success: function (data) {
                         $('#tblBody').empty(),
