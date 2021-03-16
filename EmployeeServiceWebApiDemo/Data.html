@@ -11,7 +11,8 @@
         <div class="col-md-10 mt-3">
             <div class="card">
                 <div class="card-header">
-                    <input type="button" class="btn btn-success" id="btnLoadEmployees" value="Load All Employees"/>
+                    <input type="button" class="btn btn-success" id="btnLoadEmployees" value="Load All Employees" />
+                    <input type="button" class="btn btn-success float-right" id="btnLogOff" value="Logout" />
                 </div>
             </div>
 
@@ -74,6 +75,11 @@
 
             $('#linkClose').click(function() {
                 $('#divError').hide('fade');
+            });
+
+            $('#btnLogOff').click(function() {
+                sessionStorage.removeItem('accessToken');
+                window.location.href = "Login.html";
             });
 
             $('#btnLoadEmployees').click(function () {
